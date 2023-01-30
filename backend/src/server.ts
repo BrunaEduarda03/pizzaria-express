@@ -5,6 +5,7 @@ import userRouter from "./router/user.router";
 import categoryRouter from "./router/category.router";
 import productRouter from "./router/product.router";
 import path from 'path';
+import orderRouter from "./router/order.routes";
 
 const app = express();
 app.use(express.json());
@@ -13,6 +14,8 @@ app.use(cors());
 app.use(userRouter);
 app.use(categoryRouter);
 app.use(productRouter);
+app.use(orderRouter);
+
 app.use('/files',express.static(path.resolve(__dirname, '..','tmp')));
 
 app.use((err:Error,req:Request,res:Response,next:NextFunction)=>{
