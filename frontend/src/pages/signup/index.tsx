@@ -9,6 +9,7 @@ import { Button } from '../../components/ui/Button'
 
 import Link from 'next/link';
 
+
 export default function SignUp() {
   return (
     <>
@@ -22,18 +23,19 @@ export default function SignUp() {
         <h1>Criando sua conta</h1>
 
         <form>
-          <Input
+        
+           <Input
             placeholder="Digite seu nome"
             type="text"
           />
-
+         
           <Input
             placeholder="Digite seu email"
             type="text"
           />
 
           <Input
-            placeholder="Sua senha"
+            placeholder="Digite sua Senha"
             type="password"
           />
           
