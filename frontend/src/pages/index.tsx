@@ -5,19 +5,24 @@ import logoImg from '../../public/logo.svg';
 import { Input } from '../components/ui/Input'
 import { Button } from '../components/ui/Button'
 import Link from 'next/link';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
 
 export default function Home() {
   const {signIn}= useContext(AuthContext);
+  const [email,setEmail] = useState('');
+  const [password,setPassword] = useState('');
+  const [loading,setLoading] = useState(false);
 
   const handleLogin = (e) =>{
     e.preventDefault();
     let data = {
-      email:'teste@teste.com',
-      password:'123123'
+      email,
+      password
     }
+    setLoading(true);
     signIn(data);
+    
   }
   return (
     <>
@@ -32,11 +37,15 @@ export default function Home() {
           <Input
             placeholder=" Digite seu email"
             type="text"
+            value={email}
+            onChange={(e)=>setEmail(e.target.value)}
           />
 
           <Input
             placeholder="Digite sua Senha"
             type="password"
+            value={password}
+            onChange={(e)=>setPassword(e.target.value)}
           />
           
           <Button
