@@ -5,7 +5,7 @@ import logoImg from '../../public/logo.svg';
 import { Input } from '../components/ui/Input'
 import { Button } from '../components/ui/Button'
 import Link from 'next/link';
-import { useContext, useState } from 'react';
+import { FormEvent, useContext, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
 
 export default function Home() {
@@ -14,15 +14,19 @@ export default function Home() {
   const [password,setPassword] = useState('');
   const [loading,setLoading] = useState(false);
 
-  const handleLogin = (e) =>{
+  const handleLogin = async (e:FormEvent) =>{
     e.preventDefault();
+    if(email === '' || password === ''){
+      alert('Preencha todos  os campos');
+    } 
+    setLoading(true);
     let data = {
       email,
       password
     }
-    setLoading(true);
-    signIn(data);
     
+    await signIn(data);
+    setLoading(false);
   }
   return (
     <>

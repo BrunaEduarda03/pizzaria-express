@@ -8,6 +8,7 @@ type AuthContextProps = {
   isAutenticated:boolean;
   signIn:(credencials:SignInProps) =>Promise<void>
   signOut:()=>void;
+  signUp:(credencials:SignUpProps) =>Promise<void>
 }
   
   type UserProps = {
@@ -17,6 +18,12 @@ type AuthContextProps = {
 }
 
 type SignInProps= {
+  email:string;
+  password:string; 
+}
+
+type SignUpProps= {
+  name:string;
   email:string;
   password:string; 
 }
@@ -63,7 +70,21 @@ async function signIn({email,password}:SignInProps){
   }
 }
 
-const context = {user, isAutenticated, signIn,signOut};
+async function signUp({name,email,password}:SignUpProps){
+  try{
+    const response = api.post('/users',{
+      name,email,password
+    })
+    console.log('cadastrado com sucesso');
+    Router.push('/');
+    
+  }catch(error){
+    console.log('erro ao cadastrar:',error);
+    
+  }
+}
+
+const context = {user, isAutenticated, signIn,signOut,signUp};
 
   return (
     <AuthContext.Provider value={context}>
