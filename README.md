@@ -1,6 +1,6 @@
 # pizzaria-express
 <h1 align="center">
-    <img alt="CASHFORCE CHALLENGE" src="screenshots/banner.png" width="100%" />
+    <img alt="PIIZARIA EXPRESS" src="screenshots/banner.png" width="100%" />
     <br>
 </h1>
 Aplicação completa para pizzaria desenvolvida em 3 camadas(Back-end/Front-end/Mobile).
@@ -36,5 +36,16 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 **#Clonar este repositório**
 
 ```
-git clone https://github.com/
+git clone git@github.com:BrunaEduarda03/pizzaria-express.git
 ```
+
+
+#### [🚨](https://emojiterra.com/pt/luz-giratoria/) Em caso de dúvida, entre em contato..
+
+[Email](brunaduda37@gmail.com.br)
+
+[Linkedin](https://www.linkedin.com/in/bruna-eduarda-a06a1b18b/)
+
+---
+
+Desenvolvido por: [Bruna Eduarda](https://www.linkedin.com/in/bruna-eduarda-a06a1b18b/)
