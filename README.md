@@ -1,8 +1,8 @@
-# pizzaria-express
-<h1 align="center">
-    <img alt="PIIZARIA EXPRESS" src="screenshots/banner.png" width="100%" />
+
+<h2 align="center">
+    <img alt="PIZZARIA EXPRESS" src="screenshots/banner.png" width="100%" />
     <br>
-</h1>
+</h2>
 Aplicação completa para pizzaria desenvolvida em 3 camadas(Back-end/Front-end/Mobile).
 
 ## 🚀 Tecnologias
