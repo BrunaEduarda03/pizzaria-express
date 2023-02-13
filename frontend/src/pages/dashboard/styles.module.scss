@@ -1,0 +1,48 @@
+.container{
+ 
+  max-width: 700px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.container h1{
+  color: var(--white);
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+
+.input{
+  padding: 1rem;
+  background-color: var(--dark-900);
+  border: 0;
+  height: 3rem;
+  border: 0.3rem;
+  color: var(--white);
+  border:1px  solid var(--gray-100);
+
+  &::placeholder{
+    color: var(--white);
+  }
+}
+
+.button{
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: var(--green-900);
+  border: 0;
+  border:1px  solid var(--gray-100);
+  font-size: 20px;
+  font-weight: bold;
+  border: 0.3rem;
+  color: var(--dark-700);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
