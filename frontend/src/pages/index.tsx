@@ -7,6 +7,9 @@ import { Button } from '../components/ui/Button'
 import Link from 'next/link';
 import { FormEvent, useContext, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
+import { toast } from 'react-toastify';
+import { GetServerSideProps } from 'next';
+import { canSSRGuest } from './utils/canSSRGuest';
 
 export default function Home() {
   const {signIn}= useContext(AuthContext);
@@ -17,7 +20,7 @@ export default function Home() {
   const handleLogin = async (e:FormEvent) =>{
     e.preventDefault();
     if(email === '' || password === ''){
-      alert('Preencha todos  os campos');
+      toast.error('Preencha todos  os campos');
     } 
     setLoading(true);
     let data = {
@@ -69,3 +72,10 @@ export default function Home() {
     </>
   )
 }
+
+export const getServerSideProps = canSSRGuest(async(context)=>{
+  return {
+    props:{}
+  }
+});
+ 

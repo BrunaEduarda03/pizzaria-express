@@ -1,6 +1,7 @@
 import Router from "next/router";
 import { destroyCookie, setCookie } from "nookies";
 import { createContext, ReactNode, useState } from "react";
+import { toast } from "react-toastify";
 import { api } from "../services/apiClient";
 
 type AuthContextProps = {
@@ -63,9 +64,11 @@ async function signIn({email,password}:SignInProps){
 
     setUser({id,name,email});
     api.defaults.headers['Authorization'] =`Bearer ${token}`  // passa o token para proximas requisições
+    toast.success('Bem vindo de volta');
     Router.push('/dashboard');
 
   }catch(error){
+    toast.error('erro ao acessar')
     console.log('erro ao acessar:',error);
   }
 }
@@ -75,11 +78,11 @@ async function signUp({name,email,password}:SignUpProps){
     const response = api.post('/users',{
       name,email,password
     })
-    console.log('cadastrado com sucesso');
+    toast.success('cadastrado com sucesso');
     Router.push('/');
     
   }catch(error){
-    console.log('erro ao cadastrar:',error);
+    toast.error('erro ao cadastrar',error);
     
   }
 }

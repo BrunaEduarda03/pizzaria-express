@@ -10,6 +10,7 @@ import { Button } from '../../components/ui/Button'
 import Link from 'next/link';
 import { FormEvent, useContext, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
+import { toast } from 'react-toastify';
 
 
 export default function SignUp() {
@@ -22,7 +23,7 @@ export default function SignUp() {
   async function handleRegister(e:FormEvent){
     e.preventDefault();
     if(name == '' || email == '' || password == ''){
-      alert('preencha todos os campos');
+      toast.error('preencha todos os campos');
       return;
     }
     setLoading(true);
