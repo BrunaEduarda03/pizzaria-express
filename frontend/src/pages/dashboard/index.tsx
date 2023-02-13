@@ -1,8 +1,15 @@
+import Head from "next/head"
+import { Header } from "../../components/Header"
 import { canSSRAuth } from "../utils/canSSRAuh"
 
 export default function Dashboard (){
   return (
-    <h1>Dashboard</h1>
+    <>
+    <Head>
+      <title>Painel - Pizzaria</title>
+    </Head>
+    <Header />
+    </>
   )
 }
 
