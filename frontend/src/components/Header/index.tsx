@@ -15,10 +15,10 @@ export function Header(){
         </Link>
 
         <nav className={styles.menuNav}>
-        <Link href='/category'>
+        <Link href='/category' passHref>
           <a>Nova Categoria</a>
         </Link>
-        <Link href='/product'>
+        <Link href='/product' passHref>
           <a>Cardápio</a>
         </Link>
         <button onClick={signOut}>
