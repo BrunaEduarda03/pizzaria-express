@@ -135,7 +135,7 @@ export default function Product({categoryList}:Categoryrops){
             placeholder="Preço do produto"  
             className={styles.input}
             value={price}
-            onChange={(e)=>setPrice(e.target.value)}
+            onChange={(e)=>setPrice((e.target.value))}
           />
           <textarea 
             placeholder="Insira a descrição"
