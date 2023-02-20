@@ -1,21 +1,26 @@
-import { useState } from "react";
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useContext, useEffect, useState } from "react";
+import { ActivityIndicator, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { AuthContext } from "../../contexts/AuthContext";
+
 
 export default function SignIn(){
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
+  const {signIn,loadingAuth} = useContext(AuthContext);
 
   async function handleLogin(){
     if(email === '' || password === '') {
       alert('preencha todos os campos');
       return;
     }
-    
+    await signIn({email,password});  
   }
+ 
   return(
     <View style={styles.container}>
       <Image 
-        source={require('../assets/logo.png')}
+        source={require('../../assets/logo.png')}
         style={styles.logo} 
         />
     
@@ -37,13 +42,16 @@ export default function SignIn(){
           onChangeText={setPassword}
           />
 
-        <TouchableOpacity style={styles.button} onPress={handleLogin}>
+        {loadingAuth? (
+          <ActivityIndicator color='#fff' size={25} />
+        ):(
+         <TouchableOpacity style={styles.button} onPress={handleLogin}>
           <Text style={styles.buttonText}>Acessar</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> 
+        )}
+        
         <Text style={styles.register}>Não possui conta? Registre-se!</Text>
       </View>
-
-      
     </View>
   )
 }
