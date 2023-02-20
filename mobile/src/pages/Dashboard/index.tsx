@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity } from "react-native";
 import { AuthContext } from "../../contexts/AuthContext";
 import { StackParamsList } from "../../routes/app.routes";
+import { api } from "../../services/api";
 
 export default function Dashboard(){
   const {signOut} = useContext(AuthContext);
@@ -11,9 +12,13 @@ export default function Dashboard(){
   const navigation = useNavigation<NativeStackNavigationProp<StackParamsList>>(); 
 
   async function openOrder(){
-    // if(tableNumber === '') return;
+    if(tableNumber === '') return;
 
-    navigation.navigate('Order',{table:tableNumber,order_id:'order_id'});
+    const {data} = await api.post('/order',{
+      table:Number(tableNumber)
+    })
+    // console.log(data);
+    navigation.navigate('Order',{table:data.table,order_id:data.id});
   } 
 
   return(
