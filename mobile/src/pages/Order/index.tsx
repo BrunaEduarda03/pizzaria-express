@@ -19,16 +19,25 @@ export type CategoryProps = {
   id:string,
   name:string,
 }
-
+export type ProductProps = {
+  id:string,
+  name:string,
+}
 
 export default function Order(){
   const route = useRoute<OrderRouteProps>();
   const navigation = useNavigation();
+
   const [category,setCategory] = useState<CategoryProps[]|[] >([]);
-  const [categorySelect,setCategorySelected] = useState<CategoryProps>();
-  const [qtd,setQtd] = useState('1');
+  const [categorySelect,setCategorySelected] = useState<CategoryProps|undefined>();
   const [modalCategoryVisible,setModalCategoryVisible] = useState(false);
 
+  const [products,setProducts] = useState<ProductProps[]|[] >([]);
+  const [productSelected,setProductSelected] = useState<ProductProps|undefined>();
+  const [modalProductVisible,setModalProductVisible] = useState(false);
+
+  const [qtd,setQtd] = useState('1');
+  
   useEffect(()=>{
     async function loadInfo(){
       const respose = await api.get('/category');
@@ -38,6 +47,24 @@ export default function Order(){
     }
     loadInfo();
   },[]);
+
+  useEffect(()=>{
+    async function loadProducts(){
+      const respose = await api.get('/category/product',{
+        params:{
+          category_id:categorySelect?.id,
+        }
+      });
+      console.log('================================');
+      
+      console.log(respose.data);
+      
+      setProducts(respose.data);    
+      setProductSelected(respose.data[0])
+      
+    }
+    loadProducts();
+  },[categorySelect]);
 
   async function closeOrder(){
     try{
@@ -57,6 +84,10 @@ export default function Order(){
     setCategorySelected(item);
   }
 
+  function handleChangeProducts(item:CategoryProps){
+    setProductSelected(item);
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -72,9 +103,11 @@ export default function Order(){
         </TouchableOpacity>
       )}
 
-      <TouchableOpacity style={styles.input}>
-        <Text style={{ color:'#fff'}}>Pizza frango com catupiry</Text>
+      {products.length !== 0 && (
+        <TouchableOpacity style={styles.input} onPress={()=>setModalProductVisible(true)}>
+          <Text style={{ color:'#fff'}}>{productSelected?.name}</Text>
       </TouchableOpacity>
+      )}
 
       <View style={styles.qtdContainer}>
         <Text style={styles.qtdText}>Quantidade</Text>
@@ -105,6 +138,18 @@ export default function Order(){
           options={category}
           handleCloseModal={()=>setModalCategoryVisible(false)}
           selectedItem={handleChangeCategory}
+        />
+      </Modal>
+
+      <Modal
+        transparent={true}
+        visible={modalProductVisible}
+        animationType='fade'
+        >
+        <ModalPicker
+          options={products}
+          handleCloseModal={()=>setModalProductVisible(false)}
+          selectedItem={handleChangeProducts}
         />
       </Modal>
       
