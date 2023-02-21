@@ -1,10 +1,11 @@
 import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
-import { Modal, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { FlatList, Modal, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {Feather} from '@expo/vector-icons'
 import { api } from "../../services/api";
 import { useEffect, useState } from "react";
 import { ModalPicker } from "../../components/ModalPicker";
+import { ItemList } from "../../components/ItemList";
 
 type RouteDetailParams = {
   Order:{
@@ -24,6 +25,14 @@ export type ProductProps = {
   name:string,
 }
 
+export type ItemProps = {
+  id:string,
+  product_id:string,
+  name:string,
+  amount:number| string,
+}
+
+
 export default function Order(){
   const route = useRoute<OrderRouteProps>();
   const navigation = useNavigation();
@@ -36,7 +45,9 @@ export default function Order(){
   const [productSelected,setProductSelected] = useState<ProductProps|undefined>();
   const [modalProductVisible,setModalProductVisible] = useState(false);
 
-  const [qtd,setQtd] = useState('1');
+  const [itens,setItens] = useState<ItemProps[]>([]);
+  const [amount,setAmount] = useState('1');
+  
   
   useEffect(()=>{
     async function loadInfo(){
@@ -88,13 +99,31 @@ export default function Order(){
     setProductSelected(item);
   }
 
+  async function handleAdd(){
+    const response = await api.post('/order/add',{
+      order_id:route.params?.order_id,
+      product_id:productSelected?.id,
+      amount:Number(amount)
+    })
+
+    let data ={
+      id:response.data.id,
+      product_id:productSelected?.id as string,
+      name:productSelected?.name as string,
+      amount:amount,
+    }
+    setItens(oldArray => [...oldArray,data])
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>Mesa {route.params.table}</Text>
-        <TouchableOpacity onPress={closeOrder}>
-          <Feather name='trash-2' size={30} color='#ff3f4b' />
-        </TouchableOpacity>
+        {itens.length === 0 &&(
+          <TouchableOpacity onPress={closeOrder}>
+            <Feather name='trash-2' size={30} color='#ff3f4b' />
+          </TouchableOpacity>
+        )}
       </View>
       
       {category.length !== 0 && (
@@ -113,21 +142,34 @@ export default function Order(){
         <Text style={styles.qtdText}>Quantidade</Text>
         <TextInput 
           style={[styles.input, {width:'60%', textAlign:'center',color:'#fff'}]} 
-          value='1'
+          value={amount}
+          onChangeText={setAmount}
           keyboardType="numeric"
           
           />
       </View>
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.AddButton}>
+        <TouchableOpacity style={styles.AddButton} onPress={handleAdd}>
         <Text style={styles.AddText}>+</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.nextButton}>
+        <TouchableOpacity 
+          style={[styles.nextButton,{opacity:itens.length === 0 ? 0.3:1}]} 
+          disabled={itens.length === 0}
+        >
           <Text style={styles.NextText}>Avançar</Text>
         </TouchableOpacity>
       </View>
+
+      <FlatList
+        showsVerticalScrollIndicator={false}
+        style={{flex:1,marginTop:24}} 
+        data={itens}
+        keyExtractor={(item) =>item.id}
+        renderItem={({item})=><ItemList data={item} />}
+      
+      />
 
       <Modal
       transparent={true}
