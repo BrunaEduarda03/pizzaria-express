@@ -1,5 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import {Feather} from '@expo/vector-icons';
+import { api } from "../../services/api";
 
 interface ItemProps {
   data:{
@@ -7,14 +8,20 @@ interface ItemProps {
     product_id:string;
     name:string;
     amount:number| string;
-    }
+    };
+    deleteItem:(item_id:string)=>void;
 }
-export function ItemList({data}:ItemProps){
+export function ItemList({data,deleteItem}:ItemProps){
+
+  async function handleDeleteItem(){
+    deleteItem(data.id);
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{data.amount} - {data.name}</Text>
 
-      <TouchableOpacity >
+      <TouchableOpacity onPress={handleDeleteItem}>
         <Feather  name='trash-2' color='#ff3f4b' size={25} />
       </TouchableOpacity >
     </View>

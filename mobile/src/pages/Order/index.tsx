@@ -66,9 +66,6 @@ export default function Order(){
           category_id:categorySelect?.id,
         }
       });
-      console.log('================================');
-      
-      console.log(respose.data);
       
       setProducts(respose.data);    
       setProductSelected(respose.data[0])
@@ -113,6 +110,17 @@ export default function Order(){
       amount:amount,
     }
     setItens(oldArray => [...oldArray,data])
+  }
+
+  async function handleDeleteItem(item_id:string){
+    const response = await api.delete('/order/remove',{
+      params:{
+        item_id:item_id
+      }
+    })
+    let removeItem = itens.filter(item=>item.id === item_id);
+    setItens(removeItem);
+     
   }
 
   return (
@@ -167,7 +175,8 @@ export default function Order(){
         style={{flex:1,marginTop:24}} 
         data={itens}
         keyExtractor={(item) =>item.id}
-        renderItem={({item})=><ItemList data={item} />}
+        renderItem={({item})=><ItemList data={item} deleteItem={()=>handleDeleteItem(item.id)} />}
+       
       
       />
 
