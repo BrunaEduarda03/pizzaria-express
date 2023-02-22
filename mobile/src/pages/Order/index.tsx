@@ -1,11 +1,13 @@
 import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
-import { FlatList, Modal, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { ActivityIndicator, FlatList, Modal, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {Feather} from '@expo/vector-icons'
 import { api } from "../../services/api";
 import { useEffect, useState } from "react";
 import { ModalPicker } from "../../components/ModalPicker";
 import { ItemList } from "../../components/ItemList";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { StackParamsList } from "../../routes/app.routes";
 
 type RouteDetailParams = {
   Order:{
@@ -14,7 +16,7 @@ type RouteDetailParams = {
   }
 }
 
-type OrderRouteProps = RouteProp<RouteDetailParams,'Order'>;
+export type OrderRouteProps = RouteProp<RouteDetailParams,'Order'>;
 
 export type CategoryProps = {
   id:string,
@@ -35,7 +37,7 @@ export type ItemProps = {
 
 export default function Order(){
   const route = useRoute<OrderRouteProps>();
-  const navigation = useNavigation();
+  const navigation = useNavigation<NativeStackNavigationProp<StackParamsList>>();
 
   const [category,setCategory] = useState<CategoryProps[]|[] >([]);
   const [categorySelect,setCategorySelected] = useState<CategoryProps|undefined>();
@@ -47,13 +49,16 @@ export default function Order(){
 
   const [itens,setItens] = useState<ItemProps[]>([]);
   const [amount,setAmount] = useState('1');
+  const [loading,setLoading] = useState(true);
   
   
   useEffect(()=>{
     async function loadInfo(){
       const respose = await api.get('/category');
+      
       setCategory(respose.data);    
-      setCategorySelected(respose.data[0])
+      setCategorySelected(respose.data[0]);
+      setLoading(false);
       
     }
     loadInfo();
@@ -68,8 +73,8 @@ export default function Order(){
       });
       
       setProducts(respose.data);    
-      setProductSelected(respose.data[0])
-      
+      setProductSelected(respose.data[0]); 
+      setLoading(false);
     }
     loadProducts();
   },[categorySelect]);
@@ -113,17 +118,21 @@ export default function Order(){
   }
 
   async function handleDeleteItem(item_id:string){
-    const response = await api.delete('/order/remove',{
+     await api.delete('/order/remove',{
       params:{
         item_id:item_id
       }
     })
-    let removeItem = itens.filter(item=>item.id === item_id);
+    let removeItem = itens.filter(item=>item.id !== item_id);
     setItens(removeItem);
-     
   }
 
+  function handleFinishOrder(){
+    navigation.navigate('FinishOrder')
+  }
+  if(loading) return <ActivityIndicator color='#fff' size={25} />
   return (
+    
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>Mesa {route.params.table}</Text>
@@ -165,6 +174,7 @@ export default function Order(){
         <TouchableOpacity 
           style={[styles.nextButton,{opacity:itens.length === 0 ? 0.3:1}]} 
           disabled={itens.length === 0}
+          onPress={handleFinishOrder}
         >
           <Text style={styles.NextText}>Avançar</Text>
         </TouchableOpacity>
