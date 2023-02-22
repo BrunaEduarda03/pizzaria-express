@@ -39,11 +39,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 git clone git@github.com:BrunaEduarda03/pizzaria-express.git
 ```
 
-**#Entre na pasta do projeto**
 
-```
-cd pizzaria
-```
 
 **#Renomeie o arquivo ".env.example" que está na pasta raiz do projeto para ".env"**
 
@@ -60,7 +56,7 @@ cd pizzaria
 ```
 
 docker exec -it backend /bin/sh
-npm run test:coverage
+yarn run test:coverage
 
 ```
 
@@ -68,16 +64,34 @@ npm run test:coverage
 
 ⚠️ **Atenção**: Você precisa ter o node instalado em sua máquina para rodar o projeto.
 
-**#Primeiro você deve instalar as dependências do projeto, para isso rode**
+### __Back-end__
+Na pasta backend, renomeie o arquivo _.env.local-example_ para _.env.local_<br/>
+Informe a URL da API na variável __DATABASE_URL__.<br/>
+Informe a palavra secreta da API na variável __JWT_SECRET__<br/>
+```bash
+# Instale as dependências
+$ yarn install
 
+# Para iniciar a aplicação na porta 3333
+$ yarn dev
 ```
-npm install
-```
+### __Front-end__
+  Na pasta web, informe o IP da aplicação back-end no arquivo _src/services/api.ts_<br/>
+```bash
+# Instale as dependências
+$ yarn install
 
-**#Rode o seguinte comando para executar a aplicação**
-
+# Para iniciar a aplicação na porta 3000
+$ yarn dev
 ```
-npm run dev
+### __Mobile__
+  Na pasta web, informe o IP da aplicação back-end no arquivo _src/services/api.ts_<br/>
+```bash
+# Instale as dependências
+$ yarn install
+
+# Para iniciar a aplicação
+$ expo start
 ```
 
 **#Para executar os testes de cobertura do backend, use os seguintes comandos:**
