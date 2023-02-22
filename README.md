@@ -1,12 +1,16 @@
 
-<h2 align="center">
-    <img alt="PIZZARIA EXPRESS" src="screenshots/banner.png" width="100%" />
-    <br>
-</h2>
+
+<div display='flex' align="center" flex-direction='row'>
+   <h3 >Pizzaria Express</h3>     
+ <img alt="PIZZARIA EXPRESS" src="https://user-images.githubusercontent.com/73250271/220725088-b2bb57f7-73b2-45d3-81f1-48b73b1d68d6.jpg" width="100px" />
+</div>
+
+## :man_technologist: Sobre a aplicação
+
+Tem como objetivo a criação de um sistema para administradores e atendentes de uma pizzaria como exemplo(ou qualquer restaurante em geral) para uma melhor organização e otimização dos atendimentos devido a grande demanda de clientes.
+
+## 🚀 Tecnologias 
 Aplicação completa para pizzaria desenvolvida em 3 camadas(Back-end/Front-end/Mobile).
-
-## 🚀 Tecnologias
-
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - **Backend**
@@ -100,14 +104,16 @@ $ expo start
 npm run test:coverage
 
 ```
+### :balance_scale: Licença
+Este projeto está licenciado sob a [licença MIT](LICENSE).
 
+#### :speaking_head:  Dúvidas ou feedbacks sobre o projeto!
 
-#### [🚨](https://emojiterra.com/pt/luz-giratoria/) Em caso de dúvida, entre em contato..
+E-mail: [**brunaduda37@gmail.com**](mailto:brunaduda37@gmail.com)
 
-[Email](brunaduda37@gmail.com.br)
-
-[Linkedin](https://www.linkedin.com/in/bruna-eduarda-a06a1b18b/)
+Linkedin: [Bruna Eduarda](https://www.linkedin.com/in/bruna-eduarda-a06a1b18b/)
 
 ---
+
 
 Desenvolvido por: [Bruna Eduarda](https://www.linkedin.com/in/bruna-eduarda-a06a1b18b/)
