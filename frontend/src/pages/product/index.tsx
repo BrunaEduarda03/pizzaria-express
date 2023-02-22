@@ -25,7 +25,7 @@ export default function Product({categoryList}:Categoryrops){
   const [imageAvatar,setImageAvatar] = useState('');
   const [categorySelected,setCategorySelected] = useState(0);
   const [name,setName] = useState('');
-  const [price,setPrice] = useState(0);
+  const [price,setPrice] = useState('');
   const [description,setDescription] = useState('');
   
   async function handleFile(e:ChangeEvent<HTMLInputElement>){
@@ -67,8 +67,9 @@ export default function Product({categoryList}:Categoryrops){
       toast.success('produto cadastrado com sucesso')
       setName('');
       setDescription('');
-      setPrice(null);
+      setPrice('');
       setImageAvatar('');
+      setAvatarUrl('');
     }catch(error){
       console.log(error);
       toast('ops,erro ao cadastrar')
