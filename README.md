@@ -1,18 +1,26 @@
 
-<h2 align="center">
-    <img alt="PIZZARIA EXPRESS" src="screenshots/banner.png" width="100%" />
-    <br>
-</h2>
+
+<div display='flex' align="center" flex-direction='row'>
+   <h3 >Pizzaria Express</h3>     
+ <img alt="PIZZARIA EXPRESS" src="https://user-images.githubusercontent.com/73250271/220725088-b2bb57f7-73b2-45d3-81f1-48b73b1d68d6.jpg" width="100px" />
+</div>
+
+## :man_technologist: Sobre a aplicação
+
+Tem como objetivo a criação de um sistema para administradores e atendentes de uma pizzaria como exemplo(ou qualquer restaurante em geral) para uma melhor organização e otimização dos atendimentos devido a grande demanda de clientes.
+
+## 🚀 Tecnologias 
 Aplicação completa para pizzaria desenvolvida em 3 camadas(Back-end/Front-end/Mobile).
-
-## 🚀 Tecnologias
-
 Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- **UI/UX**
+- Figma
 
 - **Backend**
   - Express
   - PrismaORM
-  - Banco de dados PostGreSQL
+  - Beekeper
+  - PostgreSQL
   - Jwt
   - TypeScript
   - Docker
@@ -28,6 +36,10 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
   - ESLint
   - React-toastify
   - Docker
+- **Mobile**
+   -React Native com Expo
+   -Typescript
+   -AsyncStorage para armazenamento de chaves/valores
 
 ## 🛠️ Como instalar
 
@@ -39,11 +51,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 git clone git@github.com:BrunaEduarda03/pizzaria-express.git
 ```
 
-**#Entre na pasta do projeto**
 
-```
-cd pizzaria
-```
 
 **#Renomeie o arquivo ".env.example" que está na pasta raiz do projeto para ".env"**
 
@@ -60,7 +68,7 @@ cd pizzaria
 ```
 
 docker exec -it backend /bin/sh
-npm run test:coverage
+yarn run test:coverage
 
 ```
 
@@ -68,16 +76,34 @@ npm run test:coverage
 
 ⚠️ **Atenção**: Você precisa ter o node instalado em sua máquina para rodar o projeto.
 
-**#Primeiro você deve instalar as dependências do projeto, para isso rode**
+### __Back-end__
+Na pasta backend, renomeie o arquivo _.env.local-example_ para _.env.local_<br/>
+Informe a URL da API na variável __DATABASE_URL__.<br/>
+Informe a palavra secreta da API na variável __JWT_SECRET__<br/>
+```bash
+# Instale as dependências
+$ yarn install
 
+# Para iniciar a aplicação na porta 3333
+$ yarn dev
 ```
-npm install
-```
+### __Front-end__
+  Na pasta web, informe o IP da aplicação back-end no arquivo _src/services/api.ts_<br/>
+```bash
+# Instale as dependências
+$ yarn install
 
-**#Rode o seguinte comando para executar a aplicação**
-
+# Para iniciar a aplicação na porta 3000
+$ yarn dev
 ```
-npm run dev
+### __Mobile__
+  Na pasta web, informe o IP da aplicação back-end no arquivo _src/services/api.ts_<br/>
+```bash
+# Instale as dependências
+$ yarn install
+
+# Para iniciar a aplicação
+$ expo start
 ```
 
 **#Para executar os testes de cobertura do backend, use os seguintes comandos:**
@@ -86,14 +112,16 @@ npm run dev
 npm run test:coverage
 
 ```
+### :balance_scale: Licença
+Este projeto está licenciado sob a [licença MIT](LICENSE).
 
+#### :speaking_head:  Dúvidas ou feedbacks sobre o projeto!
 
-#### [🚨](https://emojiterra.com/pt/luz-giratoria/) Em caso de dúvida, entre em contato..
+E-mail: [**brunaduda37@gmail.com**](mailto:brunaduda37@gmail.com)
 
-[Email](brunaduda37@gmail.com.br)
-
-[Linkedin](https://www.linkedin.com/in/bruna-eduarda-a06a1b18b/)
+Linkedin: [Bruna Eduarda](https://www.linkedin.com/in/bruna-eduarda-a06a1b18b/)
 
 ---
+
 
 Desenvolvido por: [Bruna Eduarda](https://www.linkedin.com/in/bruna-eduarda-a06a1b18b/)
