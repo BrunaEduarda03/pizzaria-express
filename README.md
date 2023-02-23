@@ -13,10 +13,14 @@ Tem como objetivo a criação de um sistema para administradores e atendentes de
 Aplicação completa para pizzaria desenvolvida em 3 camadas(Back-end/Front-end/Mobile).
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
+- **UI/UX**
+- Figma
+
 - **Backend**
   - Express
   - PrismaORM
-  - Banco de dados PostGreSQL
+  - Beekeper
+  - PostgreSQL
   - Jwt
   - TypeScript
   - Docker
@@ -32,6 +36,10 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
   - ESLint
   - React-toastify
   - Docker
+- **Mobile**
+   -React Native com Expo
+   -Typescript
+   -AsyncStorage para armazenamento de chaves/valores
 
 ## 🛠️ Como instalar
 
