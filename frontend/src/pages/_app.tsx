@@ -6,10 +6,10 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <AuthProvider>
+   <AuthProvider>
       <Component {...pageProps} />
       <ToastContainer autoClose={3000} />
-    </AuthProvider>
+   </AuthProvider>
   )
 }
 

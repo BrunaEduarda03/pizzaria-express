@@ -135,8 +135,6 @@ export const getServerSideProps = canSSRAuth(async (context) => {
 
   const response = await apiClient.get('/order');
   //console.log(response.data);
-
-
   return {
     props: {
       orders: response.data

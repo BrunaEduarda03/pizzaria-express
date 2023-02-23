@@ -26,7 +26,7 @@ export function ModalOrder({orders,isOpen,close,handleFinishOrder}:ModalProps){
   return(
       <Modal
         isOpen={isOpen}
-        close={close}
+        onRequestClose={close}
         style={customStyles}
       >
         <button

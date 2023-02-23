@@ -17,8 +17,8 @@ export default function Dashboard(){
     const {data} = await api.post('/order',{
       table:Number(tableNumber)
     })
-    // console.log(data);
     navigation.navigate('Order',{table:data.table,order_id:data.id});
+    setTableNumber('')
   } 
 
   return(

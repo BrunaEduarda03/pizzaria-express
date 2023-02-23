@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --watch 'src/' --exec 'ts-node src/server.ts' -e ts"
+    "dev": "nodemon --watch 'src/' --exec 'ts-node src/server.ts' -e ts",
+    "build":"tsc --build",
+    "start": "node dist/server.js"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",

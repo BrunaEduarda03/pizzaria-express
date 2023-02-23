@@ -27,9 +27,8 @@ app.use((err:Error,req:Request,res:Response,next:NextFunction)=>{
     message:'internal server error'
   });
 })
-const PORT = 3333;
 
-app.listen(PORT,()=>{
-  console.log(`servidor on-line em http://localhost:${PORT}`);
+app.listen(3333,()=>{
+  console.log(`servidor on-line em http://localhost:${process.env.PORT}`);
   
 });

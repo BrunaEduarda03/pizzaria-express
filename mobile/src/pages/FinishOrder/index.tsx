@@ -1,16 +1,40 @@
-import { useRoute } from "@react-navigation/native";
+import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
 import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { OrderRouteProps } from "../Order";
 import {Feather} from '@expo/vector-icons'
+import { api } from "../../services/api";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { StackParamsList } from "../../routes/app.routes";
+
+type RouteDetailParams = {
+  FinishOrder:{
+    table:number | string, 
+    order_id:string,  
+  }
+  }
+type FinishOrderRouteProp = RouteProp<RouteDetailParams,'FinishOrder'>
 
 export default function FinishOrder(){
-  const route = useRoute<OrderRouteProps>();
+  const route = useRoute<FinishOrderRouteProp>();
+  const navigation = useNavigation<NativeStackNavigationProp<StackParamsList>>();
+
+  async function handleFinishOrder(){
+    try{
+      await api.put('/order/send',{
+        order_id:route?.params.order_id
+      });
+      navigation.popToTop();
+    }catch(e){
+      console.log('erro ao finalizar',e);
+      
+    }
+  }
+  
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.question}>Você deseja finalizar o pedido?</Text>
-      <Text style={styles.table}>Mesa 30</Text>
+      <Text style={styles.table}>Mesa {route.params.table}</Text>
 
-      <TouchableOpacity style={styles.button} >
+      <TouchableOpacity style={styles.button} onPress={handleFinishOrder} >
         <Text style={styles.buttonText}>Finalizar Pedido</Text>
         <Feather name='shopping-cart' size={25} color='#1d1d2e' />
       </TouchableOpacity>

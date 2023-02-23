@@ -16,7 +16,7 @@ type RouteDetailParams = {
   }
 }
 
-export type OrderRouteProps = RouteProp<RouteDetailParams,'Order'>;
+type OrderRouteProps = RouteProp<RouteDetailParams,'Order'>;
 
 export type CategoryProps = {
   id:string,
@@ -128,7 +128,10 @@ export default function Order(){
   }
 
   function handleFinishOrder(){
-    navigation.navigate('FinishOrder')
+    navigation.navigate('FinishOrder',{
+      table:route.params.table,
+      order_id:route.params.order_id
+    })
   }
   if(loading) return <ActivityIndicator color='#fff' size={25} />
   return (

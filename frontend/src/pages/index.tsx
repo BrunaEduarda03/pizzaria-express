@@ -8,7 +8,6 @@ import Link from 'next/link';
 import { FormEvent, useContext, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { toast } from 'react-toastify';
-import { GetServerSideProps } from 'next';
 import { canSSRGuest } from './utils/canSSRGuest';
 
 export default function Home() {
