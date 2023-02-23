@@ -17,7 +17,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - **UI/UX**
 - Figma
 
-- **Backend**
+- **Backend**           
   - Express
   - PrismaORM
   - Beekeper
@@ -28,6 +28,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
   - Mocha
   - Chai
   - ESLint
+  
 - **FrontEnd**
   - NextJs
   - TypeScript
@@ -38,9 +39,18 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
   - React-toastify
   - Docker
 - **Mobile**
-   -React Native com Expo
-   -Typescript
-   -AsyncStorage para armazenamento de chaves/valores
+  - React Native com Expo
+  - TypeScript
+  - AsyncStorage para armazenamento de chaves/valores
+   
+## 💻 Figma
+### Atendente
+![Captura de tela de 2023-02-23 19-45-51](https://user-images.githubusercontent.com/73250271/221047898-df24bea6-6853-46b8-959e-2dc273f805e5.png)
+
+### Administração
+![Captura de tela de 2023-02-23 20-00-04](https://user-images.githubusercontent.com/73250271/221050083-17b52c67-b3c8-4dc7-87ab-93e7b99b0ea4.png)
+
+ 
    
 ## 💻 DEMO
 https://user-images.githubusercontent.com/73250271/221042474-7da30837-4f20-429d-b709-74733099ebb7.mp4
