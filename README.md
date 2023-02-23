@@ -1,13 +1,14 @@
 
 
-<div display='flex' align="center" flex-direction='row'>
-   <h3 >Pizzaria Express</h3>     
- <img alt="PIZZARIA EXPRESS" src="https://user-images.githubusercontent.com/73250271/220725088-b2bb57f7-73b2-45d3-81f1-48b73b1d68d6.jpg" width="100px" />
+<div  align="center" >
+<img alt="PIZZARIA EXPRESS" src="https://user-images.githubusercontent.com/73250271/220725088-b2bb57f7-73b2-45d3-81f1-48b73b1d68d6.jpg" width="80px" />
+   <h3>Pizzaria Express</h3>     
+ 
 </div>
 
 ## :man_technologist: Sobre a aplicação
 
-Tem como objetivo a criação de um sistema para administradores e atendentes de uma pizzaria como exemplo(ou qualquer restaurante em geral) para uma melhor organização e otimização dos atendimentos devido a grande demanda de clientes.
+A aplicação tem como objetivo a criação de um sistema para administradores e atendentes de uma pizzaria como exemplo(ou qualquer restaurante em geral) para uma melhor organização e otimização dos atendimentos devido a grande demanda de clientes.
 
 ## 🚀 Tecnologias 
 Aplicação completa para pizzaria desenvolvida em 3 camadas(Back-end/Front-end/Mobile).
@@ -40,6 +41,11 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
    -React Native com Expo
    -Typescript
    -AsyncStorage para armazenamento de chaves/valores
+   
+## 💻 DEMO
+https://user-images.githubusercontent.com/73250271/221042474-7da30837-4f20-429d-b709-74733099ebb7.mp4
+
+
 
 ## 🛠️ Como instalar
 
