@@ -1,7 +1,7 @@
 
 
 <div  align="center" >
-<h3>App Pizzaria
+<h3>PIZZARIA
 <img alt="PIZZARIA EXPRESS" src="https://user-images.githubusercontent.com/73250271/220725088-b2bb57f7-73b2-45d3-81f1-48b73b1d68d6.jpg" width="50px" align="center" />
 </h3> 
 
