@@ -25,7 +25,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
   - PrismaORM
   - Beekeper
   - PostgreSQL
-  - Jwt
+  - JWT
   - TypeScript
   - Docker
   - Mocha
