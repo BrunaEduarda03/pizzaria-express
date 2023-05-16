@@ -46,15 +46,14 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
    
 ## 💻 Figma
 ### Atendente
-![Captura de tela de 2023-02-23 19-45-51](https://user-images.githubusercontent.com/73250271/221047898-df24bea6-6853-46b8-959e-2dc273f805e5.png)
+![Captura de tela de 2023-05-16 14-15-29](https://github.com/BrunaEduarda03/pizzaria-express/assets/73250271/c2ff2773-a07f-44f0-9b84-602747a51cd7)
 
 ### Administração
-![Captura de tela de 2023-02-23 20-00-04](https://user-images.githubusercontent.com/73250271/221050083-17b52c67-b3c8-4dc7-87ab-93e7b99b0ea4.png)
-
+![Captura de tela de 2023-05-16 14-19-13](https://github.com/BrunaEduarda03/pizzaria-express/assets/73250271/67bdd871-7a71-4bd9-aed6-b23921d08dfd)
  
    
 ## 💻 DEMO
-https://user-images.githubusercontent.com/73250271/221042474-7da30837-4f20-429d-b709-74733099ebb7.mp4
+https://github.com/BrunaEduarda03/pizzaria-express/assets/73250271/526f4ccc-bdb1-46db-b2a6-397e05be7abd
 
 
 
