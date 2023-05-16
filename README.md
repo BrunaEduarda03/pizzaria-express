@@ -1,8 +1,6 @@
 
-
-<div  align="center" >
-<h1>PIZZARIA
-<img alt="PIZZARIA EXPRESS" src="https://user-images.githubusercontent.com/73250271/220725088-b2bb57f7-73b2-45d3-81f1-48b73b1d68d6.jpg" width="50px" align="center" />
+<div align="center"  >       
+<img alt="PIZZARIA EXPRESS" src="https://github.com/BrunaEduarda03/pizzaria-express/assets/73250271/813d34a3-0a39-4373-80b0-540cb23ce4a6"  align="center" width="250px" />
 </h1> 
 
        
