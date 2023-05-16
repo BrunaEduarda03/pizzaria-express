@@ -49,8 +49,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ![Captura de tela de 2023-05-16 14-15-29](https://github.com/BrunaEduarda03/pizzaria-express/assets/73250271/c2ff2773-a07f-44f0-9b84-602747a51cd7)
 
 ### Administração
-![Captura de tela de 2023-05-16 15-17-35](https://github.com/BrunaEduarda03/pizzaria-express/assets/73250271/005e1134-22a7-4a0e-8177-dbf720abd40b)
- 
+![Captura de tela de 2023-05-16 15-23-10](https://github.com/BrunaEduarda03/pizzaria-express/assets/73250271/5b02a194-defc-4b07-8a79-e5c74b49d701)
+
    
 ## 💻 DEMO
 https://github.com/BrunaEduarda03/pizzaria-express/assets/73250271/526f4ccc-bdb1-46db-b2a6-397e05be7abd
