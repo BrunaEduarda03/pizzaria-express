@@ -20,7 +20,7 @@ export default function SignIn(){
   return(
     <View style={styles.container}>
       <Image 
-        source={require('../../assets/logo.png')}
+        source={require('../../assets/piz.png')}
         style={styles.logo} 
         />
     
