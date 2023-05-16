@@ -1,12 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image';
 import styles from '../../../styles/home.module.scss';
-
-import logoImg from '../../../public/logo.svg';
-
+import logoImg from '../../../public/piz.svg';
 import { Input } from '../../components/ui/Input'
 import { Button } from '../../components/ui/Button'
-
 import Link from 'next/link';
 import { FormEvent, useContext, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
@@ -39,8 +36,7 @@ export default function SignUp() {
       <Image src={logoImg} alt="Logo Sujeito Pizzaria" />
 
       <div className={styles.login}>
-        <h1>Criando sua conta</h1>
-
+      
         <form onSubmit={handleRegister}>
         
            <Input

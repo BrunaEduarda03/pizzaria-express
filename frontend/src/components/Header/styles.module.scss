@@ -11,11 +11,14 @@
   justify-content: space-between;
   align-items: center;
 
-  img{
+  Image{
     cursor:pointer;
   }
-  
 }
+.logoImage{
+  margin-top: 15px;
+}
+
 
 .menuNav{
   display: flex;
