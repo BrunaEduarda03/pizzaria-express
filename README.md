@@ -1,13 +1,17 @@
 
 
-<div display='flex' align="center" flex-direction='row'>
-   <h3 >Pizzaria Express</h3>     
- <img alt="PIZZARIA EXPRESS" src="https://user-images.githubusercontent.com/73250271/220725088-b2bb57f7-73b2-45d3-81f1-48b73b1d68d6.jpg" width="100px" />
+<div  align="center" >
+<h1>PIZZARIA
+<img alt="PIZZARIA EXPRESS" src="https://user-images.githubusercontent.com/73250271/220725088-b2bb57f7-73b2-45d3-81f1-48b73b1d68d6.jpg" width="50px" align="center" />
+</h1> 
+
+       
+ 
 </div>
 
 ## :man_technologist: Sobre a aplicação
 
-Tem como objetivo a criação de um sistema para administradores e atendentes de uma pizzaria como exemplo(ou qualquer restaurante em geral) para uma melhor organização e otimização dos atendimentos devido a grande demanda de clientes.
+A aplicação tem como objetivo a criação de um sistema para administradores e atendentes de uma pizzaria como exemplo(ou qualquer restaurante em geral) para uma melhor organização e otimização dos atendimentos devido a grande demanda de clientes.
 
 ## 🚀 Tecnologias 
 Aplicação completa para pizzaria desenvolvida em 3 camadas(Back-end/Front-end/Mobile).
@@ -16,17 +20,18 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - **UI/UX**
 - Figma
 
-- **Backend**
+- **Backend**           
   - Express
   - PrismaORM
   - Beekeper
   - PostgreSQL
-  - Jwt
+  - JWT
   - TypeScript
   - Docker
   - Mocha
   - Chai
   - ESLint
+  
 - **FrontEnd**
   - NextJs
   - TypeScript
@@ -37,9 +42,23 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
   - React-toastify
   - Docker
 - **Mobile**
-   -React Native com Expo
-   -Typescript
-   -AsyncStorage para armazenamento de chaves/valores
+  - React Native com Expo
+  - TypeScript
+  - AsyncStorage para armazenamento de chaves/valores
+   
+## 💻 Figma
+### Atendente
+![Captura de tela de 2023-02-23 19-45-51](https://user-images.githubusercontent.com/73250271/221047898-df24bea6-6853-46b8-959e-2dc273f805e5.png)
+
+### Administração
+![Captura de tela de 2023-02-23 20-00-04](https://user-images.githubusercontent.com/73250271/221050083-17b52c67-b3c8-4dc7-87ab-93e7b99b0ea4.png)
+
+ 
+   
+## 💻 DEMO
+https://user-images.githubusercontent.com/73250271/221042474-7da30837-4f20-429d-b709-74733099ebb7.mp4
+
+
 
 ## 🛠️ Como instalar
 
